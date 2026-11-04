@@ -346,3 +346,12 @@ def test_sort_by_length():
     words.sort(key=len)
 
     assert words == ["red", "blue", "green", "yellow"]
+
+
+def test_slice_with_step():
+    """Test extracting elements from a list using a step."""
+
+    words = ["red", "blue", "green", "yellow"]
+
+    assert words[::2] == ["red", "green"]
+    assert words[1::2] == ["blue", "yellow"]
