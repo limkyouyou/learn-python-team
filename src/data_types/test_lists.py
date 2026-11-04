@@ -336,3 +336,13 @@ def test_nested_list_comprehensions():
         (3, 7, 11),
         (4, 8, 12),
     ]
+
+
+def test_sort_by_length():
+    """Test sorting a list of strings by their length."""
+
+    words = ["green", "yellow", "blue", "red"]
+
+    words.sort(key=len)
+
+    assert words == ["red", "blue", "green", "yellow"]
