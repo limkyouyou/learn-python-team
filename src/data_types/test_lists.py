@@ -63,7 +63,9 @@ def test_list_type():
 
     # The built-in function len() also applies to lists
     letters = ['a', 'b', 'c', 'd']
-    assert len(letters) == 4 and letters.count('a') == 1
+    assert len(letters) == 4
+    assert letters.count('a') == 1
+    assert letters.index('c') == 2
 
     # It is possible to nest lists (create lists containing other lists),
     # for example:
