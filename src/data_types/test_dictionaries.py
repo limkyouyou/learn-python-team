@@ -98,3 +98,31 @@ def test_dictionary_get():
     # A custom default is returned when the key is missing.
     assert fruit_colors.get('orange', 'unknown') == 'unknown'
 
+
+
+def test_dictionary_pop():
+    """Test removing dictionary entries using pop()."""
+
+    fruit_colors = {
+        'apple': 'red',
+        'banana': 'yellow',
+        'cherry': 'red',
+    }
+
+    # Remove an existing key and retrieve its value.
+    removed_color = fruit_colors.pop('banana')
+    assert removed_color == 'yellow'
+
+    # Verify the removed key is no longer in the dictionary.
+    assert 'banana' not in fruit_colors
+
+    # Verify the remaining entries are unchanged.
+    assert fruit_colors == {
+        'apple': 'red',
+        'cherry': 'red',
+    }
+
+    # Return a default value when removing a missing key.
+    assert fruit_colors.pop('orange', 'unknown') == 'unknown'
+
+
