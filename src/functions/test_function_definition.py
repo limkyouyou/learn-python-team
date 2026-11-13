@@ -141,3 +141,24 @@ def test_function_definition():
         assert False, "Expected TypeError for non-numeric input"
     except TypeError as e:
         assert str(e) == "Base and exponent must be numeric values."
+
+# ==========================================
+    # NEW EXAMPLE 2: Higher-Order Function & Closure Factory
+    # ==========================================
+    def multiplier_factory(factor):
+        """Return a configured multiplier function leveraging closure scope."""
+        if factor == 0:
+            raise ValueError("Factor cannot be zero.")
+            
+        def multiply(x):
+            return x * factor
+            
+        return multiply
+
+    # Test cases for Example 2
+    double_val = multiplier_factory(2)
+    triple_val = multiplier_factory(3)
+
+    assert double_val(5) == 10
+    assert triple_val(4) == 12
+    assert double_val(-6) == -12
