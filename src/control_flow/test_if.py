@@ -22,6 +22,8 @@ def test_if_statement():
         conclusion = 'Number equals to zero'
     elif number < 1:
         conclusion = 'Number is greater than zero but less than one'
+    elif number < 522:
+        conclusion = 'Number is greater than zero but less than five hundred twenty two'
     else:
         conclusion = 'Number bigger than or equal to one'
 

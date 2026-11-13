@@ -121,3 +121,44 @@ def test_function_definition():
     greet_with_closure = compose_greet_func_with_closure('John')
 
     assert greet_with_closure() == 'Hello there, John!'
+
+# ==========================================
+    # NEW EXAMPLE 1: Function with Default Parameters & Input Validation
+    # ==========================================
+    def power_function(base, exponent=2):
+        """Calculate base raised to the power of exponent with input validation."""
+        if not isinstance(base, (int, float)) or not isinstance(exponent, (int, float)):
+            raise TypeError("Base and exponent must be numeric values.")
+        return base ** exponent
+
+    # Test cases for Example 1
+    assert power_function(3, 3) == 27
+    assert power_function(4) == 16  # Uses default exponent=2
+    
+    # Verify input validation raises expected exception
+    try:
+        power_function("two", 3)
+        assert False, "Expected TypeError for non-numeric input"
+    except TypeError as e:
+        assert str(e) == "Base and exponent must be numeric values."
+
+# ==========================================
+    # NEW EXAMPLE 2: Higher-Order Function & Closure Factory
+    # ==========================================
+    def multiplier_factory(factor):
+        """Return a configured multiplier function leveraging closure scope."""
+        if factor == 0:
+            raise ValueError("Factor cannot be zero.")
+            
+        def multiply(x):
+            return x * factor
+            
+        return multiply
+
+    # Test cases for Example 2
+    double_val = multiplier_factory(2)
+    triple_val = multiplier_factory(3)
+
+    assert double_val(5) == 10
+    assert triple_val(4) == 12
+    assert double_val(-6) == -12
