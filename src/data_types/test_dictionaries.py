@@ -77,3 +77,52 @@ def test_dictionary():
     assert dictionary_for_string_keys['sape'] == 4139
     assert dictionary_for_string_keys['guido'] == 4127
     assert dictionary_for_string_keys['jack'] == 4098
+
+
+
+def test_dictionary_get():
+    """Test retrieving dictionary values using get()."""
+
+    fruit_colors = {
+        'apple': 'red',
+        'banana': 'yellow',
+        'cherry': 'red',
+    }
+
+    # Retrieve the value of an existing key.
+    assert fruit_colors.get('apple') == 'red'
+
+    # A missing key returns None instead of raising KeyError.
+    assert fruit_colors.get('orange') is None
+
+    # A custom default is returned when the key is missing.
+    assert fruit_colors.get('orange', 'unknown') == 'unknown'
+
+
+
+def test_dictionary_pop():
+    """Test removing dictionary entries using pop()."""
+
+    fruit_colors = {
+        'apple': 'red',
+        'banana': 'yellow',
+        'cherry': 'red',
+    }
+
+    # Remove an existing key and retrieve its value.
+    removed_color = fruit_colors.pop('banana')
+    assert removed_color == 'yellow'
+
+    # Verify the removed key is no longer in the dictionary.
+    assert 'banana' not in fruit_colors
+
+    # Verify the remaining entries are unchanged.
+    assert fruit_colors == {
+        'apple': 'red',
+        'cherry': 'red',
+    }
+
+    # Return a default value when removing a missing key.
+    assert fruit_colors.pop('orange', 'unknown') == 'unknown'
+
+
