@@ -26,3 +26,48 @@ def test_if_statement():
         conclusion = 'Number bigger than or equal to one'
 
     assert conclusion == 'Number bigger than or equal to one'
+
+
+def test_if_elif_chain():
+    """Multiple ELIF branches
+
+    Only the first condition that is True runs; the rest are skipped.
+    """
+
+    score = 83
+    grade = ''
+
+    if score >= 90:
+        grade = 'A'
+    elif score >= 80:
+        grade = 'B'
+    elif score >= 70:
+        grade = 'C'
+    elif score >= 60:
+        grade = 'D'
+    else:
+        grade = 'F'
+
+    assert grade == 'B'
+
+
+
+def test_nested_if_statement():
+    """Nested IF statements
+
+    An inner condition is only checked when the outer condition is True.
+    """
+
+    age = 20
+    has_ticket = True
+    message = ''
+
+    if age >= 18:
+        if has_ticket:
+            message = 'Entry allowed'
+        else:
+            message = 'Adult without a ticket'
+    else:
+        message = 'Too young to enter'
+
+    assert message == 'Entry allowed'
