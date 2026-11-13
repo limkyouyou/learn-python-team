@@ -229,3 +229,7 @@ flake8 ./src --statistics --show-source --count
 ## Author
 
 - [@trekhleb](https://trekhleb.dev)
+
+## COMP 354 — Team Maintenance
+
+This repository is maintained by the Group 11 for the COMP 354 Software Configuration Management assignment.
