@@ -121,3 +121,23 @@ def test_function_definition():
     greet_with_closure = compose_greet_func_with_closure('John')
 
     assert greet_with_closure() == 'Hello there, John!'
+
+# ==========================================
+    # NEW EXAMPLE 1: Function with Default Parameters & Input Validation
+    # ==========================================
+    def power_function(base, exponent=2):
+        """Calculate base raised to the power of exponent with input validation."""
+        if not isinstance(base, (int, float)) or not isinstance(exponent, (int, float)):
+            raise TypeError("Base and exponent must be numeric values.")
+        return base ** exponent
+
+    # Test cases for Example 1
+    assert power_function(3, 3) == 27
+    assert power_function(4) == 16  # Uses default exponent=2
+    
+    # Verify input validation raises expected exception
+    try:
+        power_function("two", 3)
+        assert False, "Expected TypeError for non-numeric input"
+    except TypeError as e:
+        assert str(e) == "Base and exponent must be numeric values."
