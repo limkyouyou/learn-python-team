@@ -49,3 +49,25 @@ def test_if_elif_chain():
         grade = 'F'
 
     assert grade == 'B'
+
+
+
+def test_nested_if_statement():
+    """Nested IF statements
+
+    An inner condition is only checked when the outer condition is True.
+    """
+
+    age = 20
+    has_ticket = True
+    message = ''
+
+    if age >= 18:
+        if has_ticket:
+            message = 'Entry allowed'
+        else:
+            message = 'Adult without a ticket'
+    else:
+        message = 'Too young to enter'
+
+    assert message == 'Entry allowed'
