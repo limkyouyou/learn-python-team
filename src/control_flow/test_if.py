@@ -29,7 +29,7 @@ def test_if_statement():
     else:
         conclusion = 'Number bigger than or equal to five hundred twenty two'
 
-    assert conclusion == 'Number bigger than or equal to five hundred twenty two'
+    assert conclusion == 'Number is greater than ten but less than five hundred twenty two'
 
 
 def test_if_elif_chain():
