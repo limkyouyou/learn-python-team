@@ -24,10 +24,12 @@ def test_if_statement():
         conclusion = 'Number is greater than zero but less than one'
     elif number < 10:
         conclusion = 'Number is between one and ten'
+    elif number < 522:
+        conclusion = 'Number is greater than ten but less than five hundred twenty two'
     else:
-        conclusion = 'Number bigger than or equal to one'
+        conclusion = 'Number bigger than or equal to five hundred twenty two'
 
-    assert conclusion == 'Number bigger than or equal to one'
+    assert conclusion == 'Number bigger than or equal to five hundred twenty two'
 
 
 def test_if_elif_chain():
